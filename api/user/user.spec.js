@@ -99,7 +99,7 @@ describe('POST /users', () => {
       let name = '호소세';
       request(app).post('/users').send({ name }).expect(400).end(done);
     });
-    it('입력한 name 반환', (done) => {
+    it('입력한 name이 중복이면 409 반환', (done) => {
       let name = 'tony'; //es6문법
       request(app).post('/users').send({ name }).expect(409).end(done);
     });
